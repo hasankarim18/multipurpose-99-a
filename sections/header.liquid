@@ -224,7 +224,7 @@
 
   menuItems.forEach((item) => {
     const submenu = item.querySelector(":scope > ul");
-    console.log(submenu)
+    {% comment %} console.log(submenu) {% endcomment %}
 
     if (submenu) {
       // Prepare GSAP initial state
@@ -269,6 +269,7 @@
 
     // Handle grandchild submenu hover
     const grandChildMenus = item.querySelectorAll("ul.grandchild");
+    console.log(grandChildMenus)
     grandChildMenus.forEach((gc) => {
       gsap.set(gc, { opacity: 0, x: -10, display: "none" });
 
