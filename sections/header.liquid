@@ -223,7 +223,7 @@
   const menuItems = document.querySelectorAll(".d_header_menu > li");
 
   menuItems.forEach((item) => {
-    const submenu = item.querySelector(":scope > ul.child");
+    const submenu = item.querySelector(":scope > ul");
     console.log(submenu)
 
     if (submenu) {
