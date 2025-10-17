@@ -1,7 +1,7 @@
 
 :root {
-   --font-body: {{ settings.font_body | default: '"Inter", sans-serif' | font_face }};
-    --font-heading: {{ settings.font_heading | default: '"Inter", sans-serif' | font_face }}
+   --font-body: {{ settings.type_primary_font | default: '"Inter", sans-serif' | font_face }};
+   --font-heading: {{ settings.type_primary_font | default: '"Inter", sans-serif' | font_face }}
   --background-1: #111a37;
 }
 
