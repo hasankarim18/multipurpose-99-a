@@ -30,8 +30,24 @@
         <ul class="header_menu">
          
          {% for link in header_menu_links %}
-            <li class="menu_parent"> 
+            <li class=""> 
               <a href="{{ link.url }}"> {{  link.title }} </a>
+              {% if link.links.size > 0 %}
+                  {% for child_link in link.links %}
+                    <li>
+                        <a href="{{  child_link.url }}" class="">{{ child_link.title }}</a>  
+                        {% if child_link.links.size > 0 %}
+                          <ul class="child">                           
+                           
+                        
+                          {% for grandChild in child_link.links %}
+                            
+                          {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </li>
+                  {% endfor %}
+              {% endif %}
             </li> 
          
           {% endfor %}
