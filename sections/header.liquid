@@ -31,7 +31,7 @@
             <li> 
              
               <a style="
-                  {% if link.active %} color:#f89a27; {% endif %}
+                  {% if link.active %} color:{{ settings.active_color }}; {% endif %}
                 " 
                  href="{{ link.url }}"> {{  link.title }} </a>
               {% if link.links.size > 0 %}
