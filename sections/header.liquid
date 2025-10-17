@@ -33,16 +33,16 @@
             <li class=""> 
               <a href="{{ link.url }}"> {{  link.title }} </a>
               {% if link.links.size > 0 %}
-                <ul>
+                <ul class="child">
                   {% for child_link in link.links %}
                     <li>
                         <a href="{{  child_link.url }}" class="">{{ child_link.title }}</a>  
                         {% if child_link.links.size > 0 %}
-                          <ul class="grandchild">                           
-                           
-                        
+                          <ul class="grandchild">
                           {% for grandChild in child_link.links %}
-                            
+                            <li>
+                              <a href="{{ grandChild.url }}" class="">{{ grandChild.title }}</a>  
+                            </li>
                           {% endfor %}
                         </ul>
                         {% endif %}
