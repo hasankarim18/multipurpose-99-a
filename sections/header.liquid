@@ -268,7 +268,7 @@
     }
 
     // Handle grandchild submenu hover
-    const grandChildMenus = item.querySelectorAll("ul.grandchild");
+    const grandChildMenus = item.querySelectorAll(":scope > ul");
     grandChildMenus.forEach((gc) => {
       gsap.set(gc, { opacity: 0, x: -10, display: "none" });
 
