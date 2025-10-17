@@ -87,6 +87,12 @@
     "settings": [
       {
         "type": "color",
+        "id": "active_color",
+        "default":"#f89a27",
+        "label": "Active color"
+      },
+      {
+        "type": "color",
         "id": "background_color",
         "default": "#FFFFFF",
         "label": "t:labels.background"
