@@ -11,30 +11,28 @@
     {% render 'meta-tags' %}
 
 <style>
-    
-      :root {
-        --font-body: {{ settings.type_primary_font.family | default: '"Inter", sans-serif' | font_face }};
-        --font-heading: {{ settings.type_primary_font.family | default: '"Inter", sans-serif' | font_face }}
-        --background-1: #111a37;
-      }
+  :root {
+    --font-body: {{ settings.type_primary_font.family | default: "Inter, sans-serif" }};
+    --font-heading: {{ settings.type_primary_font.family | default: "Inter, sans-serif" }};
+    --background-1: #111a37;
+  }
 
-      *{
-        margin:0;
-        padding:0;
-        box-sizing:border-box;
-          font-family: var(--font-body) !important;
-      }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-body) !important;
+  }
 
+  body {
+    font-family: var(--font-body);
+  }
 
-      body {
-        font-family: var(--font-body);
-      }
-
-      h1, h2, h3, h4, h5, h6 {
-        font-family:var(--font-heading) !important;
-      }
-
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading) !important;
+  }
 </style>
+
 
     {{ content_for_header }}
   </head>
