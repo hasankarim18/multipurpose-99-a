@@ -30,9 +30,10 @@
          {% for link in header_menu_links %}
             <li> 
              
-              <a {% if link.active %}
-                class="active"
-              {% endif %} href="{{ link.url }}"> {{  link.title }} </a>
+              <a style="
+                  {% if link.active %} color:#f89a27; {% endif %}
+                " 
+                 href="{{ link.url }}"> {{  link.title }} </a>
               {% if link.links.size > 0 %}
                 <ul class="child">
                   {% for child_link in link.links %}
