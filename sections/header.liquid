@@ -1,7 +1,7 @@
 
 {%liquid
    assign menu = section.settings.menu
-   assign header_menu_links = linklists[header-menu].links
+   assign header_menu_links = linklists[menu].links
 
  %}
 
@@ -28,7 +28,7 @@
     <div style="justify-content:{{ section.settings.menu_position }};" class="header__menu">
       {% if section.settings.menu_type == 'menu' %}
         <ul class="header_menu">
-          {{  header_menu_links }}
+         
          {% for link in header_menu_links %}
             <li> {{ link.title }} </li>
           {% endfor %}
