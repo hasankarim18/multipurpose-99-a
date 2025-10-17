@@ -5,9 +5,14 @@
   style="background-color:{{ settings.background_1 }}"
 >
   <div class="header_wrapper">      
-    <h2 class="header__title">
+    <div class="site_logo">
+      {% unless settings.site_logo %}
+         <h2 class="header__title">
       {{ shop.name | link_to: routes.root_url }}
     </h2>
+      {% endunless %}
+    </div>
+   
 
     <div style="justify-content:{{ section.settings.menu_position }};" class="header__menu">
      navigation
