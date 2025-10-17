@@ -27,7 +27,7 @@
 
     <div style="justify-content:{{ section.settings.menu_position }};" class="header__menu">
       {% if section.settings.menu_type == 'menu' %}
-        <ul class="header_menu">
+        <ul class="d_header_menu">
          
          {% for link in header_menu_links %}
             <li class=""> 
@@ -96,7 +96,7 @@
     height: auto;
   }
 
-  .header_menu{
+  .d_header_menu{
     display: flex;
     list-style: none;
     gap:20px;
