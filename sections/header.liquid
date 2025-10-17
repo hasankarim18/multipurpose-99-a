@@ -134,7 +134,17 @@
     min-width: 150px;
     border-top:0px solid #fff; 
     box-shadow: rgba(15, 15, 131, 0.2) 0px 7px 29px 0px;
+    opacity: 0;
+    z-index: -999;
+    transition: all 0.3s ease-in-out;
   }
+
+  ul.d_header_menu li:hover ul{
+    opacity: 1;
+  }
+
+
+
 
   ul.d_header_menu li ul li{
     cursor: pointer;
