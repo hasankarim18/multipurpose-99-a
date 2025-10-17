@@ -214,9 +214,88 @@
 {% endstylesheet %}
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
    integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+ document.addEventListener("DOMContentLoaded", () => {
+  const menuItems = document.querySelectorAll(".d_header_menu > li");
+
+  menuItems.forEach((item) => {
+    const submenu = item.querySelector(":scope > ul.child");
+
+    if (submenu) {
+      // Prepare GSAP initial state
+      gsap.set(submenu, { opacity: 0, y: -10, display: "none" });
+
+      item.addEventListener("mouseenter", () => {
+        gsap.killTweensOf(submenu); // Stop ongoing animations
+        gsap.set(submenu, { display: "block" });
+        gsap.to(submenu, {
+          opacity: 1,
+          y: 0,
+          duration: 0.3,
+          ease: "power2.out",
+        });
+
+        // Stagger animate its child links
+        const links = submenu.querySelectorAll("li");
+        gsap.fromTo(
+          links,
+          { opacity: 0, y: -5 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.2,
+            stagger: 0.05,
+            ease: "power1.out",
+          }
+        );
+      });
+
+      item.addEventListener("mouseleave", () => {
+        gsap.killTweensOf(submenu);
+        gsap.to(submenu, {
+          opacity: 0,
+          y: -10,
+          duration: 0.2,
+          ease: "power2.in",
+          onComplete: () => gsap.set(submenu, { display: "none" }),
+        });
+      });
+    }
+
+    // Handle grandchild submenu hover
+    const grandChildMenus = item.querySelectorAll("ul.grandchild");
+    grandChildMenus.forEach((gc) => {
+      gsap.set(gc, { opacity: 0, x: -10, display: "none" });
+
+      const parentLi = gc.closest("li");
+      parentLi.addEventListener("mouseenter", () => {
+        gsap.set(gc, { display: "block" });
+        gsap.to(gc, {
+          opacity: 1,
+          x: 0,
+          duration: 0.25,
+          ease: "power2.out",
+        });
+      });
+
+      parentLi.addEventListener("mouseleave", () => {
+        gsap.to(gc, {
+          opacity: 0,
+          x: -10,
+          duration: 0.2,
+          ease: "power2.in",
+          onComplete: () => gsap.set(gc, { display: "none" }),
+        });
+      });
+    });
+  });
+});
+
+</script>
 
 
 {% schema %}
