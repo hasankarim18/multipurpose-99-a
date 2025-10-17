@@ -16,7 +16,7 @@
       "settings": {
         "logo_width": 122,
         "menu_type": "menu",
-        "menu": "",
+        "menu": "header-menu",
         "menu_position": "center"
       }
     }
