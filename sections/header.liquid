@@ -223,21 +223,21 @@
    display: inline-block;
   }
 
-    ul.d_header_menu li{
-       transition: all 0.3ms ease-in-out;
-    }
-
-  ul.d_header_menu li img{
-    margin-left:5px;
-    rotate: 90deg;
-    transition: all 0.3ms ease-in-out;
+ul.d_header_menu li{
+      transition: all 0.3ms ease-in-out;
   }
 
-    ul.d_header_menu li:hover img{
- 
-    rotate: -90deg;
-   
-  }
+ul.d_header_menu li img {
+  margin-left: 5px;
+  transform: rotate(90deg);
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center; /* ensures smooth pivot */
+}
+
+ul.d_header_menu li:hover img {
+  transform: rotate(-90deg);
+}
+
 
 
 {% endstylesheet %}
