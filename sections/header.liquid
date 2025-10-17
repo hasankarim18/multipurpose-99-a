@@ -28,8 +28,11 @@
     <div style="justify-content:{{ section.settings.menu_position }};" class="header__menu">    
         <ul class="d_header_menu">         
          {% for link in header_menu_links %}
-            <li class=""> 
-              <a href="{{ link.url }}"> {{  link.title }} </a>
+            <li> 
+             
+              <a {% if [link.active] %}
+                class="active"
+              {% endif %} href="{{ link.url }}"> {{  link.title }} </a>
               {% if link.links.size > 0 %}
                 <ul class="child">
                   {% for child_link in link.links %}
