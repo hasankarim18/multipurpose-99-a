@@ -269,7 +269,7 @@
 
     // Handle grandchild submenu hover
     console.log({item});
-    const grandChildMenus = item.querySelectorAll("ul.grandchild");
+    const grandChildMenus = item.querySelectorAll("ul");
     console.log(grandChildMenus)
     grandChildMenus.forEach((gc) => {
       gsap.set(gc, { opacity: 0, x: -10, display: "none" });
