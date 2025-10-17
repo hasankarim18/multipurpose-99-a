@@ -22,6 +22,21 @@
     ]
   },
   {
+    "name": "Background 1",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Background 1"
+      },
+      {
+        "type": "text",
+        "id": "background_1",
+        "label": "Background 1",
+        "default":"#111a37"
+      }
+    ]
+  },
+  {
     "name": "t:general.typography",
     "settings": [
       {
