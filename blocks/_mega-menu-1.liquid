@@ -1,0 +1,45 @@
+<div class="mega_menu_1">
+  <div class="mega_menu_1_desktop">
+    
+  </div>
+  {% comment %} mobile {% endcomment %}
+   <div class="mega_menu_1_mobile">
+     mega_menu_1 mobile
+   </div>
+</div>
+
+{%- stylesheet -%}
+  .mega_menu_1{
+    position: relative;
+  }
+
+  .mega_menu_1 ul.mega_menu_1_container{
+    display: flex;
+  }
+
+
+{%- endstylesheet -%}
+
+{% schema %}
+{
+  "name": "Mega menu 1",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Default Heading"
+    }
+  ],
+  "blocks": [
+   
+  ],
+  "presets": [
+    {
+      "name": "Mega menu 1",
+      "category": "header"
+    }
+  ]
+}
+{% endschema %}
+
