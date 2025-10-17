@@ -1,11 +1,11 @@
 
 {%liquid
    assign menu = section.settings.menu
-   assign header_menu_links = linklists.header-menu.links
+   assign header_menu_links = linklists[header-menu].links
 
  %}
 
- {{  menu }}
+
 
 <header
   style="background-color:{{ settings.background_1 }}"
