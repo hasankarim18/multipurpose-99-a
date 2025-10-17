@@ -47,7 +47,10 @@
                           <ul class="grandchild">
                           {% for grandChild in child_link.links %}
                             <li>
-                              <a href="{{ grandChild.url }}" class="">{{ grandChild.title }}</a>  
+                              <a  style="
+                                    {% if child_link.active %} color:{{ settings.active_color }}; {% endif %}
+                                 "  
+                                 href="{{ grandChild.url }}" class="">{{ grandChild.title }}</a>  
                             </li>
                           {% endfor %}
                         </ul>
