@@ -15,6 +15,7 @@
       "type": "header",
       "settings": {
         "logo_width": 110,
+        "menu_type": "mega",
         "menu": "",
         "menu_position": "center"
       }

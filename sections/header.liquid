@@ -113,7 +113,11 @@
       "label": "t:labels.menu",
       "visible_if": "{{ section.settings.menu_type == 'menu' }}"
     },
-
+    {
+      "type": "header",
+      "content": "Mega menu has to build by adding blocks",
+      "visible_if": "{{ section.settings.menu_type == 'mega' }}"
+    },
     {
       "type": "select",
       "label": "Menu position",
