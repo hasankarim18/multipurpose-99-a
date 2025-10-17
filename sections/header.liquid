@@ -12,7 +12,9 @@
     </h2>
       {% endunless %}
       <a>
-         <img width="200" height="114" src="{{ settings.site_logo | image_url }}" />
+         <img class="site_logo" width="" height=""
+          style="width:{{ section.settings.logo_width }}px;"
+          src="{{ settings.site_logo | image_url }}" />
         </a>
     </div>
    
@@ -51,6 +53,11 @@
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
   }
+
+  .header_wrapper .site_logo{
+    height: auto;
+  }
+
   header a {
     position: relative;
     text-decoration: none;
@@ -81,6 +88,15 @@
 {
   "name": "header",
   "settings": [
+    {
+      "type": "range",
+      "default":100,
+      "min": 100,
+      "max": 200,
+      "step": 2,
+      "label": "Logo Widht",
+      "id": "logo_width"
+    },
     {
       "type": "link_list",
       "id": "menu",
